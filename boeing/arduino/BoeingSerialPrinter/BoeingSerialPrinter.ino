@@ -1,3 +1,4 @@
+// Should be big enough for our data payloads.
 const int BUFFER_SIZE = 64;
 char inputBuffer[BUFFER_SIZE];
 int bufferIndex = 0;
@@ -30,6 +31,7 @@ void processBuffer() {
   
   char* token = strtok(inputBuffer, ",");
   int index = 0;
+  // Check to see if these values should be int or float, or if it matters.
   while (token != NULL && index < 12) {  // Assuming 12 values (4 legs * 3 angles each)
     int value = atoi(token);
     Serial.print("Value ");
